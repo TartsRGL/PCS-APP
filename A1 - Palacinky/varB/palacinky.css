@@ -1,0 +1,100 @@
+/* Reset basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light text for contrast */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styling */
+header {
+    background-color: #333;
+    padding: 1rem;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff6f3c; /* Warm accent color on hover */
+}
+
+/* Main content styling */
+main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+    background-color: #262626;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+h1 {
+    color: #ff6f3c; /* Accent color */
+    text-align: center;
+}
+
+h2 {
+    color: #ff9256; /* Slightly lighter accent color */
+}
+
+button {
+    background-color: #ff6f3c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff9256;
+}
+
+#servings {
+    width: 50px;
+    padding: 0.3rem;
+    border-radius: 5px;
+    border: 1px solid #555;
+    color: #333;
+}
+
+ul#ingredients-list {
+    margin-top: 1rem;
+    padding-left: 1rem;
+}
+
+footer {
+    background-color: #333;
+    color: #e0e0e0;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}

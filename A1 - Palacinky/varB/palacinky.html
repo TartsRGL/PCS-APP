@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palačinky / Recept</title>
+    <link rel="stylesheet" href="palačinky.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Recepty</a></li>
+                <li><a href="#">Kontakty</a></li>
+                <li><a href="#">E-shop</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <main>
+        <article>
+            <h1>Palačinky</h1>
+            <br>
+            <section>
+                <h2>Ingredience</h2>
+                <br>
+                <p>Počet porcí: <input type="number" id="servings" value="4" min="1" max="99"></p>
+                <br>    
+                <p><button onclick="adjustIngredients()">Upravit</button></p>
+                <ul id="ingredients-list">
+                    <li>Mouka - 200g</li>
+                    <li>Mléko - 300ml</li>
+                    <li>Vejce - 2 ks</li>
+                    <li>Špetka soli</li>
+                </ul>
+            </section>
+            <br>
+            <br>
+            <section>
+                <h2>Postup</h2>
+                <ol>
+                    <br>
+                    <li>Připravte těsto alá smíchej suroviny dohromady<br> a pak jen míchej a míchej až těsto <br>
+                         bude umíchaný a <b>uživatel zadýchaný</b></li>
+                    <br>
+                    <li>Na pánvi osmahněte palačinky do zlatova</li>
+                </ol>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>Kontaktní infromace</p>
+        <address>Mgr. Langoš, Palačinková 744, 767 01 Topinkov</address>
+    </footer>
+
+    <script src="palačinky.js"></script>
+</body>
+</html>
