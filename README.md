@@ -61,5 +61,5 @@ The repository is organized as follows:
 ---
 
 ## **Acknowledgments**
-Special thanks to **Praha Coding School**, especially [Mr. Wernerdweight](https://github.com/wernerdweight), for their guidance and inspiration during the course.
+Special thanks to **Praha Coding School**, especially [Mr. Wernerdweight](https://github.com/wernerdweight), for their guidance.
 
