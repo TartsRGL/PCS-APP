@@ -1,6 +1,7 @@
 # **PCS-APP**
 
-This repository is a personal collection of projects and exercises from the **Praha Coding School (PCS)** course. Each subdirectory represents a separate lesson, containing original code from the class along with improvements and modifications.
+This repository is a personal collection of projects and exercises from the **Praha Coding School (PCS)** course.
+Each subdirectory represents a separate lesson, containing original code from the class along with improvements and modifications.
 
 ---
 
