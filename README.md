@@ -14,6 +14,7 @@ Each subdirectory represents a separate lesson, containing original code from th
 
 Each subfolder corresponds to a different lesson, demonstrating both the original version and its enhancements.
 
+Lesson 1. Pancakes /html,css/ - Configurator /js/
 ---
 
 ## **Technology Stack**
