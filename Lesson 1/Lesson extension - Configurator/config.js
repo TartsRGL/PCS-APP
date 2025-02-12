@@ -3,10 +3,10 @@ function adjustIngredients() {
     const ingredientsList = document.getElementById("ingredients-list");
 
     const ingredients = [
-        { name: "Mouka", amount: 200, unit: "g" },
-        { name: "Mléko", amount: 300, unit: "ml" },
+        { name: "Mouka", amount: 150, unit: "g" },
+        { name: "Mléko", amount: 225, unit: "ml" },
         { name: "Vejce", amount: 2, unit: "ks" },
-        { name: "Sůl", amount: 1, unit: "špetka" }
+        { name: "Sůl", amount: 0.8, unit: "špetka" }
     ];
 
     if (servings < 1 || isNaN(servings)) {
@@ -18,7 +18,7 @@ function adjustIngredients() {
     ingredientsList.innerHTML = ""; // Vymazání starého seznamu
 
     ingredients.forEach(ingredient => {
-        let adjustedAmount = ingredient.amount * (servings / 4);
+        let adjustedAmount = ingredient.amount * (servings / 3);
         adjustedAmount = ingredient.unit === "ks" ? Math.round(adjustedAmount) : parseFloat(adjustedAmount.toFixed(1));
 
         // Vytvoření položky seznamu s pevně oddělenými hodnotami
@@ -32,9 +32,9 @@ function adjustIngredients() {
     });
 }
 
-// Resetovací funkce - nastaví zpět na 4 porce a zavolá adjustIngredients()
+// Resetovací funkce - nastaví zpět na 3 porce a zavolá adjustIngredients()
 function resetIngredients() {
-    document.getElementById("servings").value = 4;
+    document.getElementById("servings").value = 3;
     adjustIngredients();
 }
 
