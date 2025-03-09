@@ -9,17 +9,17 @@ function adjustIngredients() {
         { name: "Sůl", amount: 0.8, unit: "špetka" }
     ];
 
-    if (servings < 1 || isNaN(servings)) {
+    if (isNaN(servings) || servings < 1) {
         alert("Počet porcí musí být minimálně 1!");
-        servings = 1;
         document.getElementById("servings").value = 1;
+        servings = 1;
     }
 
     ingredientsList.innerHTML = ""; // Vymazání starého seznamu
 
     ingredients.forEach(ingredient => {
         let adjustedAmount = ingredient.amount * (servings / 3);
-        adjustedAmount = ingredient.unit === "ks" ? Math.round(adjustedAmount) : parseFloat(adjustedAmount.toFixed(1));
+        adjustedAmount = ingredient.unit === "ks" ? Math.round(adjustedAmount) : adjustedAmount.toFixed(1);
 
         // Vytvoření položky seznamu s pevně oddělenými hodnotami
         const listItem = document.createElement("li");
@@ -32,15 +32,14 @@ function adjustIngredients() {
     });
 }
 
-// Resetovací funkce - nastaví zpět na 3 porce a zavolá adjustIngredients()
 function resetIngredients() {
     document.getElementById("servings").value = 3;
     adjustIngredients();
 }
 
-// Spouštění funkce při změně vstupu
-document.getElementById("servings").addEventListener("input", adjustIngredients);
-document.querySelector("button").addEventListener("click", resetIngredients);
-
-// Spuštění při načtení stránky
-window.onload = adjustIngredients;
+// Události pro vstup a tlačítko
+window.onload = () => {
+    document.getElementById("servings").addEventListener("input", adjustIngredients);
+    document.querySelector("button").addEventListener("click", resetIngredients);
+    adjustIngredients();
+};

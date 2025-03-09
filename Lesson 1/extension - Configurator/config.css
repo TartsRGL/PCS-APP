@@ -7,27 +7,27 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #1a1a1a; /* Dark background */
-    color: #e0e0e0; /* Light text for contrast */
+    background-color: #1a1a1a;
+    color: #e0e0e0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 /* Header styling */
 header {
     background-color: #333;
     padding: 1rem;
+    width: 100%;
+    text-align: center;
 }
 
 header nav ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
-}
-
-header nav ul li {
-    margin: 0 1rem;
+    gap: 1.5rem;
 }
 
 header nav ul li a {
@@ -39,7 +39,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #ff6f3c; /* Warm accent color on hover */
+    color: #ff6f3c;
 }
 
 /* Main content styling */
@@ -47,30 +47,31 @@ main {
     flex: 1;
     padding: 2rem;
     max-width: 800px;
-    margin: auto;
     background-color: #262626;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-}
-
-h1 {
-    color: #ff6f3c; /* Accent color */
     text-align: center;
 }
 
+h1 {
+    color: #ff6f3c;
+}
+
 h2 {
-    color: #ff9256; /* Slightly lighter accent color */
+    color: #ff9256;
+    margin-top: 1rem;
 }
 
 button {
     background-color: #ff6f3c;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1.2rem;
     cursor: pointer;
     border-radius: 5px;
     font-size: 1rem;
     transition: background-color 0.3s;
+    margin-top: 1rem;
 }
 
 button:hover {
@@ -78,26 +79,15 @@ button:hover {
 }
 
 #servings {
-    width: 50px;
-    padding: 0.3rem;
+    width: 60px;
+    padding: 0.5rem;
     border-radius: 5px;
     border: 1px solid #555;
     color: #333;
-}
-
-ul#ingredients-list {
-    margin-top: 1rem;
-    padding-left: 1rem;
-}
-
-footer {
-    background-color: #333;
-    color: #e0e0e0;
-    padding: 1rem;
     text-align: center;
-    font-size: 0.9rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
+
 ul#ingredients-list {
     margin-top: 1rem;
     padding-left: 0;
@@ -109,4 +99,14 @@ ul#ingredients-list li {
     justify-content: space-between;
     padding: 5px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer {
+    background-color: #333;
+    color: #e0e0e0;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    width: 100%;
+    margin-top: 2rem;
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pancakes / Config</title>
+    <title>Palačinky - Configurator</title>
     <link rel="stylesheet" href="config.css">
 </head>
 <body>
@@ -15,19 +15,16 @@
                 <li><a href="#">E-shop</a></li>
             </ul>
         </nav>
-    </header>   
-    <br>
+    </header>
+    
     <main>
         <article>
             <h1>Palačinky</h1>
-            <br>
             <section>
                 <h2>Ingredience</h2>
-                <br>
+                <label for="servings">Počet porcí:</label>
                 <input type="number" id="servings" value="3" min="1" max="99" oninput="adjustIngredients()">
-                <br>   
-                <br>   
-                <p><button onclick="resetIngredients()">Tři porce</button></p>
+                <button onclick="resetIngredients()">Reset na 3 porce</button>
                 <ul id="ingredients-list">
                     <li>Mouka - 150g</li>
                     <li>Mléko - 225ml</li>
@@ -35,46 +32,24 @@
                     <li>Špetka soli</li>
                 </ul>
             </section>
-            <br>
-            <br>
+            
             <section>
                 <h2>Postup</h2>
                 <ol>
-                    <li><strong>Příprava těsta:</strong> <br>
-                        V míse smíchejte mouku, mléko, vejce a špetku soli. <br>
-                        Míchejte, dokud nevznikne hladké těsto bez hrudek.
-                    </li>
-                    <br>
-                    <li><strong>Nechte těsto odpočinout:</strong> <br>
-                        Pokud máte čas, nechte těsto 10–15 minut stát. <br>
-                        Díky tomu budou palačinky nadýchanější.
-                    </li>
-                    <br>
-                    <li><strong>Rozpálení pánve:</strong> <br>
-                        Na středním ohni rozehřejte pánev s trochou másla nebo oleje.
-                    </li>
-                    <br>
-                    <li><strong>Smažení palačinek:</strong> <br>
-                        Nalijte malé množství těsta na pánev a krouživým pohybem <br>
-                        ho rovnoměrně rozprostřete. Smažte asi 1–2 minuty, dokud <br>
-                        se nezačnou tvořit bublinky, poté otočte a smažte další minutu.
-                    </li>
-                    <br>
-                    <li><strong>Servírování:</strong> <br>
-                        Hotové palačinky podávejte s oblíbenou náplní – <br>
-                        marmeládou, Nutellou, ovocem nebo šlehačkou.
-                    </li>
+                    <li><strong>Příprava těsta:</strong> Smíchejte mouku, mléko, vejce a sůl. Míchejte do hladka.</li>
+                    <li><strong>Odpočinek těsta:</strong> Nechte 10–15 minut odstát pro lepší konzistenci.</li>
+                    <li><strong>Příprava pánve:</strong> Na středním ohni rozehřejte pánev s trochou másla.</li>
+                    <li><strong>Smažení:</strong> Nalijte těsto na pánev, smažte 1–2 minuty z každé strany.</li>
+                    <li><strong>Servírování:</strong> Podávejte s marmeládou, Nutellou, ovocem nebo šlehačkou.</li>
                 </ol>
             </section>
-                       
         </article>
     </main>
-
+    
     <footer>
-        <p>Kontaktní infromace</p>
-        <address>Mgr. Langoš, Palačinková 744, 767 01 Topinkov</address>
+        <p>Kontakt: Mgr. Langoš, Palačinková 744, 767 01 Topinkov</p>
     </footer>
-
+    
     <script src="config.js"></script>
 </body>
 </html>
