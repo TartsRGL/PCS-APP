@@ -14,7 +14,9 @@ Each subdirectory represents a separate lesson, containing original code from th
 
 Each subfolder corresponds to a different lesson, demonstrating both the original version and its enhancements.
 
-Lesson 1. Pancakes /html,css/ - Configurator /js/
+- [Lesson 1. Pancakes /html,css/ - Configurator /js/](./Lesson%201)
+- [Lesson 2. Organic Product Page /html,css/ - Dynamic Cart /js/](./Lesson%202)
+
 ---
 
 ## **Technology Stack**
@@ -49,4 +51,4 @@ Special thanks to [**Praha Coding School**](https://prahacoding.cz/) & [Mr. Wern
 
 ---
 
-  
+
