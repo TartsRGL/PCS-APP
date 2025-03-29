@@ -5,6 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Organic Product Page</title>
   <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    /* Responzivní design */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -13,10 +39,10 @@
     <h1>Organic Product Co.</h1>
     <nav>
       <ul>
-        <li><a href="#about us">About</a></li>
-        <li><a href="#featured">Featured Product</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#about" aria-label="About Us">About</a></li>
+        <li><a href="#featured" aria-label="Featured Product">Featured Product</a></li>
+        <li><a href="#testimonials" aria-label="Customer Testimonials">Testimonials</a></li>
+        <li><a href="#contact" aria-label="Contact Us">Contact Us</a></li>
       </ul>
     </nav>
   </header>
@@ -47,10 +73,10 @@
           <li>Great for busy lifestyles</li>
         </ol>
 
-        <form id="cartForm">
+        <form id="cartForm" aria-label="Add product to cart">
           <label for="quantity">Quantity:</label>
-          <input type="number" id="quantity" name="quantity" min="1" value="1">
-          <button type="submit">Add to Cart</button>
+          <input type="number" id="quantity" name="quantity" min="1" value="1" aria-label="Product quantity">
+          <button type="submit" aria-label="Add to cart">Add to Cart</button>
         </form>
 
       </article>
@@ -70,17 +96,16 @@
   </main>
 
   <footer>
-    <label for="quantity">Quantity:</label>
     <h2>Contact Us</h2>
     <p>123 Organic Street, City, Country</p>
     <p>Email: <a href="mailto:info@organicproductco.com">info@organicproductco.com</a></p>
     <p>Phone: <a href="tel:123-456-7890">123-456-7890</a></p>
   </footer>
 
-  <dialog id="cartDialog">
-    <h2>Your Shopping Cart</h2>
+  <dialog id="cartDialog" aria-labelledby="cartDialogTitle">
+    <h2 id="cartDialogTitle">Your Shopping Cart</h2>
     <!-- Cart contents will be displayed here -->
-    <button id="closeCart">Close</button>
+    <button id="closeCart" aria-label="Close cart dialog">Close</button>
   </dialog>
   
   <script>
@@ -88,8 +113,13 @@
     const cartDialog = document.getElementById('cartDialog');
     const closeCartButton = document.getElementById('closeCart');
 
-    cartForm.addEventListener('submit', () => {
+    cartForm.addEventListener('submit', (event) => {
       event.preventDefault();
+      const quantity = document.getElementById('quantity').value;
+      if (quantity < 1) {
+        alert('Please enter a valid quantity.');
+        return;
+      }
       cartDialog.showModal();
     });
 
