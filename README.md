@@ -42,9 +42,7 @@ Each subfolder corresponds to a different lesson, demonstrating both the origina
 ## **Future Plans**
 - Continue refining and optimizing lesson exercises.  
 - Expand functionality by adding advanced features.  
-- Experiment with backend technologies (e.g., PHP, Laravel).  
-- **Integrate testing frameworks** (e.g., Jest, Cypress) for better reliability.  
-- **Add CI/CD pipelines** for automated testing and deployment.
+- Experiment with backend technologies (e.g., PHP, Laravel).
 
 ---
 

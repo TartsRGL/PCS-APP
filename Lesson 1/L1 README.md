@@ -51,3 +51,6 @@ If **Lesson 2+** will be similar small-scale projects, keeping them as **subfold
 
 🔹 **Recommendation:** Separate repos for major projects, single repo for small exercises.
 
+## **Acknowledgments**
+Special thanks to [**Praha Coding School**](https://prahacoding.cz/) & [Mr. Wernerdweight](https://github.com/wernerdweight) for their guidance.
+
