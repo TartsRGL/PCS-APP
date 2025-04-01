@@ -25,7 +25,6 @@ This project is part of the **PCS-APP** course and demonstrates a modern product
 Lesson 2/
 ├── basic-structure.html  # Main product page
 ├── basic-structure.css   # Original styling
-├── styles.css            # Enhanced modern styling
 ```
 
 ## Future Improvements
