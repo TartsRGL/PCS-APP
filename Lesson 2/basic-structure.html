@@ -82,24 +82,14 @@
 
   <dialog id="cartDialog">
     <h2>Your Shopping Cart</h2>
-    <!-- Cart contents will be displayed here -->
+    <ul id="cartItems">
+      <!-- Cart items will be dynamically added here -->
+    </ul>
+    <p id="totalPriceCZK">Total: 0 Kč</p>
     <button id="closeCart">Close</button>
   </dialog>
   
-  <script>
-    const cartForm = document.getElementById('cartForm');
-    const cartDialog = document.getElementById('cartDialog');
-    const closeCartButton = document.getElementById('closeCart');
-
-    cartForm.addEventListener('submit', () => {
-      event.preventDefault();
-      cartDialog.showModal();
-    });
-
-    closeCartButton.addEventListener('click', () => {
-      cartDialog.close();
-    });
-  </script>
+  <script src="cart.js"></script>
 </body>
 
 </html>

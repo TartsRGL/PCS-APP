@@ -74,3 +74,86 @@ footer {
   padding: 1rem 0;
   margin-top: 2rem;
 }
+
+dialog#cartDialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  border-radius: 10px;
+  padding: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 400px;
+}
+
+dialog#cartDialog h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+dialog#cartDialog ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+dialog#cartDialog ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+dialog#cartDialog ul li:last-child {
+  border-bottom: none;
+}
+
+dialog#cartDialog ul li input[type="number"] {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.3rem;
+  margin-right: 0.5rem;
+}
+
+dialog#cartDialog ul li button {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+dialog#cartDialog ul li button:hover {
+  background-color: #e60000;
+}
+
+dialog#cartDialog button {
+  display: block;
+  margin: 0.5rem auto 0 auto;
+  padding: 0.5rem 1rem;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+dialog#cartDialog button:hover {
+  background-color: #45a049;
+}
+
+dialog#cartDialog p#totalPriceCZK {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
