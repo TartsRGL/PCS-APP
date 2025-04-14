@@ -2,7 +2,8 @@
 
 Welcome to my digital pancake lab.
 
-This repo collects all my projects and exercises from the **Praha Coding School (PCS)** web development course – with a personal twist. Every folder is a lesson. Every lesson is a chaotic combo of original class code + my late-night “what-if” experiments.
+This repo collects all my projects and exercises from the **Praha Coding School (PCS)** web development course – with a personal twist.
+Every folder is a lesson. Every lesson is a chaotic combo of original class code + my late-night “what-if” experiments.
 
 ---
 
