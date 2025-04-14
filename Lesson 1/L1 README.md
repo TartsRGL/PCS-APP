@@ -26,7 +26,7 @@ lesson1/
 ├── config.html  # Main interactive recipe page
 ├── config.css   # Styling for dark theme
 ├── config.js    # JavaScript logic for ingredient adjustment
-├── table.html   # Static version with CSS styling
+├── a   table.html   # Static version with CSS styling
 ```
 
 ## Future Improvements

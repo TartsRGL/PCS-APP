@@ -1,54 +1,57 @@
-# **PCS-APP**
+# 🥞 PCS-APP
 
-This repository is a personal collection of projects and exercises from the **Praha Coding School (PCS)** course.
-Each subdirectory represents a separate lesson, containing original code from the class along with improvements and modifications.
+Welcome to my digital pancake lab.
+
+This repo collects all my projects and exercises from the **Praha Coding School (PCS)** web development course – with a personal twist. Every folder is a lesson. Every lesson is a chaotic combo of original class code + my late-night “what-if” experiments.
 
 ---
 
-## **About the Project**
+## 📚 About the Project
 
 **PCS-APP** was created to:
-- Organize and track coding exercises from the PCS web development course.
-- Experiment with improvements and optimizations beyond the classroom content.
-- Serve as a portfolio showcasing coding progress and creativity.
 
-Each subfolder corresponds to a different lesson, demonstrating both the original version and its enhancements.
+- Keep my PCS lessons organized (and slightly less messy)
+- Go beyond the tutorials and try new things (sometimes they even work)
+- Serve as a living portfolio of my web dev journey, one layout bug at a time
 
-- [Lesson 1. Pancakes /html,css/ - Configurator /js/](./Lesson%201)
-- [Lesson 2. Organic Product Page /html,css/ - Dynamic Cart /js/](./Lesson%202)
+📂 Contents:
+
+- [Lesson 1 – Pancake Configurator (HTML, CSS, JS)](./Lesson%201)  
+- [Lesson 2 – Organic Product Page + Dynamic Cart](./Lesson%202)  
+- [Lesson 3 – Grid vs Flexbox Showdown](./Lesson%203)
 
 ---
 
-## **Technology Stack**
+## 🛠️ Tech Stack
+
 - **Frontend:** HTML, CSS, JavaScript  
-- **Styling:** Responsive designs with a focus on clean, user-friendly interfaces.  
-- **Version Control:** Git and GitHub for collaboration and version management.  
+- **Styling:** Responsive layouts with an eye for minimalism (and occasional chaos)  
+- **Version Control:** Git + GitHub – because tracking my confusion is half the fun  
 
 ---
 
-## **How to Use**
-1. Clone the repository:  
+## 🚀 How to Explore
+
+1. Clone the repo:  
    ```bash
    git clone https://github.com/TartsRGL/PCS-APP.git
    ```
-2. Navigate into a specific lesson folder:  
+2. Dive into a lesson:  
    ```bash
-   cd PCS-APP/<lesson-name>
+   cd PCS-APP/<lesson-folder>
    ```
-3. Open the `index.html` file in a browser to view the project.  
+3. Open `index.html` in your browser and enjoy the weirdness.
 
 ---
 
-## **Future Plans**
-- Continue refining and optimizing lesson exercises.  
-- Expand functionality by adding advanced features.  
-- Experiment with backend technologies (e.g., PHP, Laravel).
+## 🔮 Coming Soon
+
+- More lessons, more layout experiments  
+- Cleaner, smarter JS (in theory)  
+- Backend explorations (PHP, Laravel, and probably tears)
 
 ---
 
-## **Acknowledgments**
-Special thanks to [**Praha Coding School**](https://prahacoding.cz/) & [Mr. Wernerdweight](https://github.com/wernerdweight) for their guidance.
+## 🙏 Thanks
 
----
-
-
+Huge shoutout to [**Praha Coding School**](https://prahacoding.cz/) and [Mr. Wernerdweight](https://github.com/wernerdweight) – for showing the way, and letting me break things creatively.
