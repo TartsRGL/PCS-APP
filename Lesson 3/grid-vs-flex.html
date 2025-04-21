@@ -1,62 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid vs Flexbox</title>
-    <style>
-        .flex-container {
-            display: flex;
-            gap: 10px;
-            justify-content: center; /* Added for alignment */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid vs Flexbox</title>
+  <style>
+    /* Styling for the container */
+    .container {
+      display: grid;
+      gap: 10px;
+      padding: 20px;
+    }
 
-        .flex-item {
-            width: 100px;
-            height: 100px;
-            background-color: #ff9900;
-            color: white;
-            text-align: center;
-            line-height: 100px;
-            border-radius: 10px; /* Added for rounded corners */
-        }
+    /* Grid Layout */
+    .grid-container {
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: auto 1fr auto;
+    }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(3, 100px);
-            gap: 10px;
-            justify-content: center; /* Added for alignment */
-        }
+    .grid-container .header {
+      grid-area: header;
+      background-color: #b3d9ff;
+    }
 
-        .grid-item {
-            width: 100px;
-            height: 100px;
-            background-color: #9966cc;
-            color: white;
-            text-align: center;
-            line-height: 100px;
-            border-radius: 10px; /* Added for rounded corners */
-        }
-    </style>
+    .grid-container .sidebar {
+      grid-area: sidebar;
+      background-color: #d9b3ff;
+    }
+
+    .grid-container .main {
+      grid-area: main;
+      background-color: #ffd9b3;
+    }
+
+    .grid-container .footer {
+      grid-area: footer;
+      background-color: #b3ffd9;
+    }
+
+    /* Flexbox Layout */
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px; /* Added gap to mimic Grid spacing */
+    }
+
+    .flex-container > div {
+      flex: 1 1 calc(50% - 10px);
+      margin: 5px;
+      padding: 20px; /* Ensure consistent padding */
+      text-align: center;
+      font-size: 1.2em;
+      border: 1px solid #ccc; /* Ensure consistent border */
+    }
+
+    .flex-container .header,
+    .flex-container .footer {
+      flex: 0 0 100%;
+    }
+
+    /* General styles for items */
+    .header,
+    .sidebar,
+    .main,
+    .footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 1.2em;
+      border: 1px solid #ccc;
+    }
+
+    /* Styling for the switch button */
+    .switch-container {
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <h1>Grid vs Flexbox</h1>
+  <div class="switch-container">
+    <button id="toggle-layout">Switch to Flexbox</button>
+  </div>
 
-    <h2>Flexbox Example</h2>
-    <div class="flex-container">
-        <div class="flex-item">Flex 1</div>
-        <div class="flex-item">Flex 2</div>
-        <div class="flex-item">Flex 3</div>
-    </div>
+  <div class="container grid-container" id="layout-container">
+    <div class="header">Header</div>
+    <div class="sidebar">Sidebar</div>
+    <div class="main">Main Content</div>
+    <div class="footer">Footer</div>
+  </div>
 
-    <h2>Grid Example</h2>
-    <div class="grid-container">
-        <div class="grid-item">Grid 1</div>
-        <div class="grid-item">Grid 2</div>
-        <div class="grid-item">Grid 3</div>
-        <div class="grid-item">Grid 4</div>
-        <div class="grid-item">Grid 5</div>
-        <div class="grid-item">Grid 6</div>
-    </div>
+  <script>
+    // JavaScript for switching layouts
+    const toggleButton = document.getElementById('toggle-layout');
+    const layoutContainer = document.getElementById('layout-container');
+
+    toggleButton.addEventListener('click', () => {
+      if (layoutContainer.classList.contains('grid-container')) {
+        layoutContainer.classList.remove('grid-container');
+        layoutContainer.classList.add('flex-container');
+        toggleButton.textContent = 'Switch to Grid';
+      } else {
+        layoutContainer.classList.remove('flex-container');
+        layoutContainer.classList.add('grid-container');
+        toggleButton.textContent = 'Switch to Flexbox';
+      }
+    });
+  </script>
 </body>
 </html>
