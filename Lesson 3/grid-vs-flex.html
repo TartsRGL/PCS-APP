@@ -47,21 +47,35 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 10px; /* Added gap to mimic Grid spacing */
+      align-items: stretch; /* Ensure items stretch to match heights */
+      gap: 10px; /* Mimic Grid spacing */
     }
 
     .flex-container > div {
-      flex: 1 1 calc(50% - 10px);
-      margin: 5px;
-      padding: 20px; /* Ensure consistent padding */
+      flex: 1 1 calc(50% - 10px); /* Ensure consistent sizing */
+      min-height: 100px; /* Match Grid proportions */
+      padding: 20px;
       text-align: center;
       font-size: 1.2em;
-      border: 1px solid #ccc; /* Ensure consistent border */
+      border: 1px solid #ccc;
     }
 
-    .flex-container .header,
+    .flex-container .header {
+      flex: 0 0 100%;
+      background-color: #b3d9ff; /* Match Grid color */
+    }
+
+    .flex-container .sidebar {
+      background-color: #d9b3ff; /* Match Grid color */
+    }
+
+    .flex-container .main {
+      background-color: #ffd9b3; /* Match Grid color */
+    }
+
     .flex-container .footer {
       flex: 0 0 100%;
+      background-color: #b3ffd9; /* Match Grid color */
     }
 
     /* General styles for items */
