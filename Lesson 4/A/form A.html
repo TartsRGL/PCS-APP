@@ -27,9 +27,15 @@
             <legend>Kontaktní informace</legend>
             <label for="country">Stát</label>
             <select name="country" id="country" aria-label="Select your country">
-                <option value="cz">ČR</option>
-                <option value="sk">SK</option>
-                <option value="hu">HU</option>
+                <optgroup label="Evropa">
+                    <option value="cz">Česko</option>
+                    <option value="sk">Slovensko</option>
+                    <option value="hu">Maďarsko</option>
+                </optgroup>
+                <optgroup label="Svět">
+                    <option value="ca">Kanada</option>
+                    <option value="br">Brazílie</option>
+                </optgroup>
             </select>
         </fieldset>
         <input type="submit" value="Odeslat">
