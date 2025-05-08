@@ -11,7 +11,7 @@
         <fieldset>
             <legend>Osobní informace</legend>
             <label for="name">Jméno</label>
-            <input type="text" id="name" name="user_name" required>
+            <input type="text" id="name" name="user_name" required aria-label="Your name">
             <div class="gender-selection">
                 <label for="man">Muž</label>
                 <input type="radio" name="sex" id="man" value="Muž">
@@ -19,14 +19,14 @@
                 <input type="radio" name="sex" id="woman" value="Žena">
             </div>
             <label for="birth_date">Datum narození</label>
-            <input type="datetime-local" id="birth_date" name="birth_date" required>
+            <input type="datetime-local" id="birth_date" name="birth_date" required aria-label="Your birth date">
             <label for="password">Heslo</label>
-            <input type="password" id="password" name="password" required minlength="8">
+            <input type="password" id="password" name="password" required minlength="8" aria-label="Your password">
         </fieldset>
         <fieldset>
             <legend>Kontaktní informace</legend>
             <label for="country">Stát</label>
-            <select name="country" id="country">
+            <select name="country" id="country" aria-label="Select your country">
                 <option value="cz">ČR</option>
                 <option value="sk">SK</option>
                 <option value="hu">HU</option>
