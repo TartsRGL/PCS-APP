@@ -38,21 +38,12 @@
             display: block;
             margin-bottom: 8px;
         }
-        .form-row label {
-            display: inline-block;
-            width: 120px;
-        }
         .hobbies {
             display: flex;
             flex-wrap: nowrap;
             gap: 15px;
             justify-content: flex-start;
             align-items: center;
-        }
-        .hobbies label {
-            display: flex;
-            align-items: center;
-            gap: 5px;
         }
         textarea {
             width: 100%;
@@ -64,6 +55,11 @@
             padding: 8px;
             border-radius: 4px;
             box-sizing: border-box;
+        }
+        .error {
+            color: red;
+            font-size: 0.875rem;
+            margin-top: 4px;
         }
         .form-buttons {
             display: flex;
@@ -89,26 +85,20 @@
     </style>
 </head>
 <body>
-    <form action="#" method="post">
+    <form action="#" method="post" onsubmit="return validateForm()">
         <fieldset>
             <legend><b>Osobní informace</b></legend>
             <label for="name">Jméno</label>
-            <input type="text" id="name" name="user_name" required maxlength="10" placeholder="Vaše jméno">
-
-            <label>Uživatel</label>
-            <div class="inline-group">
-                <input type="radio" name="sex" id="man" value="Muž"><label for="man">Muž</label>
-                <input type="radio" name="sex" id="woman" value="Žena"><label for="woman">Žena</label>
-            </div>
+            <input type="text" id="name" name="user_name" required minlength="3" maxlength="10" placeholder="Vaše jméno">
+            <div class="error" id="nameError"></div>
 
             <label for="birth_date">Datum narození</label>
             <input type="date" id="birth_date" name="birth_date" required>
+            <div class="error" id="dateError"></div>
 
             <label for="password">Heslo</label>
             <input type="password" id="password" name="password" required minlength="8" placeholder="Zadejte heslo (min. 8 znaků)">
-
-            <label for="profile_image">Profilová fotka</label>
-            <input type="file" name="profile_image" id="profile_image" accept="image/jpg,image/png">
+            <div class="error" id="passwordError"></div>
         </fieldset>
 
         <fieldset>
@@ -141,5 +131,37 @@
             <button type="reset">Reset</button>
         </div>
     </form>
+
+<script>
+    function validateForm() {
+        const name = document.getElementById('name');
+        const password = document.getElementById('password');
+        const birthDate = document.getElementById('birth_date');
+
+        let valid = true;
+
+        document.getElementById('nameError').textContent = '';
+        document.getElementById('passwordError').textContent = '';
+        document.getElementById('dateError').textContent = '';
+
+        if (name.value.length < 3) {
+            document.getElementById('nameError').textContent = 'Jméno musí mít alespoň 3 znaky.';
+            valid = false;
+        }
+
+        if (password.value.length < 8) {
+            document.getElementById('passwordError').textContent = 'Heslo musí mít alespoň 8 znaků.';
+            valid = false;
+        }
+
+        if (!birthDate.value) {
+            document.getElementById('dateError').textContent = 'Datum narození je povinné.';
+            valid = false;
+        }
+
+        return valid;
+    }
+</script>
+
 </body>
 </html>
