@@ -35,10 +35,6 @@
             align-items: center;
             gap: 10px;
         }
-        .form-row {
-            display: block;
-            margin-bottom: 8px;
-        }
         .hobbies {
             display: flex;
             flex-wrap: nowrap;
@@ -150,20 +146,6 @@
             const passwordError = document.getElementById('passwordError');
             passwordError.textContent = password.value.length >= 8 ? '' : 'Heslo musí mít alespoň 8 znaků.';
         }
-
-        toggleSubmitButton();
-    }
-
-    function toggleSubmitButton() {
-        const name = document.getElementById('name');
-        const password = document.getElementById('password');
-        const submitButton = document.querySelector('.form-buttons input[type="submit"]');
-
-        if (name.value.length >= 3 && password.value.length >= 8) {
-            submitButton.classList.add('active');
-        } else {
-            submitButton.classList.remove('active');
-        }
     }
 
     function validateForm() {
@@ -172,10 +154,6 @@
         const birthDate = document.getElementById('birth_date');
 
         let valid = true;
-
-        document.getElementById('nameError').textContent = '';
-        document.getElementById('passwordError').textContent = '';
-        document.getElementById('dateError').textContent = '';
 
         if (name.value.length < 3) {
             document.getElementById('nameError').textContent = 'Jméno musí mít alespoň 3 znaky.';
@@ -190,11 +168,6 @@
         if (!birthDate.value) {
             document.getElementById('dateError').textContent = 'Datum narození je povinné.';
             valid = false;
-        }
-
-        if (valid) {
-            document.querySelector('form').classList.add('success');
-            setTimeout(() => document.querySelector('form').classList.remove('success'), 1500);
         }
 
         return valid;
