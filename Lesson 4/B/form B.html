@@ -81,7 +81,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background 0.3s ease;
         }
         .form-buttons input[type="submit"]:hover, .form-buttons button:hover {
             background-color: #0056b3;
@@ -92,8 +92,8 @@
     <form action="#" method="post">
         <fieldset>
             <legend><b>Osobní informace</b></legend>
-            <label for="name">Vaše jméno</label>
-            <input type="text" id="name" name="user_name" required maxlength="10">
+            <label for="name">Jméno</label>
+            <input type="text" id="name" name="user_name" required maxlength="10" placeholder="Vaše jméno">
 
             <label>Uživatel</label>
             <div class="inline-group">
@@ -105,7 +105,7 @@
             <input type="date" id="birth_date" name="birth_date" required>
 
             <label for="password">Heslo</label>
-            <input type="password" id="password" name="password" required minlength="8">
+            <input type="password" id="password" name="password" required minlength="8" placeholder="Zadejte heslo (min. 8 znaků)">
 
             <label for="profile_image">Profilová fotka</label>
             <input type="file" name="profile_image" id="profile_image" accept="image/jpg,image/png">
@@ -133,7 +133,7 @@
             </div>
 
             <label for="bio">O mě:</label>
-            <textarea id="bio" name="bio" rows="3" cols="60"></textarea>
+            <textarea id="bio" name="bio" rows="3" cols="60" placeholder="Napište něco o sobě..."></textarea>
         </fieldset>
 
         <div class="form-buttons">
