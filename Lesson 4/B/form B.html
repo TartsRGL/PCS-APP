@@ -12,6 +12,7 @@
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
         }
         fieldset {
             margin-bottom: 15px;
@@ -82,22 +83,25 @@
         .form-buttons input[type="submit"]:hover, .form-buttons button:hover {
             background-color: #0056b3;
         }
+        .success {
+            background-color: #e0f7e0 !important;
+        }
     </style>
 </head>
 <body>
     <form action="#" method="post" onsubmit="return validateForm()">
         <fieldset>
             <legend><b>Osobní informace</b></legend>
-            <label for="name">Jméno</label>
-            <input type="text" id="name" name="user_name" required minlength="3" maxlength="10" placeholder="Vaše jméno">
+            <label for="name">Jméno *</label>
+            <input type="text" id="name" name="user_name" required minlength="3" maxlength="10" placeholder="Vaše jméno" oninput="validateLive('name')">
             <div class="error" id="nameError"></div>
 
-            <label for="birth_date">Datum narození</label>
+            <label for="birth_date">Datum narození *</label>
             <input type="date" id="birth_date" name="birth_date" required>
             <div class="error" id="dateError"></div>
 
-            <label for="password">Heslo</label>
-            <input type="password" id="password" name="password" required minlength="8" placeholder="Zadejte heslo (min. 8 znaků)">
+            <label for="password">Heslo *</label>
+            <input type="password" id="password" name="password" required minlength="8" placeholder="Zadejte heslo (min. 8 znaků)" oninput="validateLive('password')">
             <div class="error" id="passwordError"></div>
         </fieldset>
 
@@ -130,9 +134,38 @@
             <input type="submit" value="Odeslat">
             <button type="reset">Reset</button>
         </div>
-    </form>
+    <p><small>* Označuje povinná pole</small></p>
+</form>
 
 <script>
+    function validateLive(field) {
+        if (field === 'name') {
+            const name = document.getElementById('name');
+            const nameError = document.getElementById('nameError');
+            nameError.textContent = name.value.length >= 3 ? '' : 'Jméno musí mít alespoň 3 znaky.';
+        }
+
+        if (field === 'password') {
+            const password = document.getElementById('password');
+            const passwordError = document.getElementById('passwordError');
+            passwordError.textContent = password.value.length >= 8 ? '' : 'Heslo musí mít alespoň 8 znaků.';
+        }
+
+        toggleSubmitButton();
+    }
+
+    function toggleSubmitButton() {
+        const name = document.getElementById('name');
+        const password = document.getElementById('password');
+        const submitButton = document.querySelector('.form-buttons input[type="submit"]');
+
+        if (name.value.length >= 3 && password.value.length >= 8) {
+            submitButton.classList.add('active');
+        } else {
+            submitButton.classList.remove('active');
+        }
+    }
+
     function validateForm() {
         const name = document.getElementById('name');
         const password = document.getElementById('password');
@@ -157,6 +190,11 @@
         if (!birthDate.value) {
             document.getElementById('dateError').textContent = 'Datum narození je povinné.';
             valid = false;
+        }
+
+        if (valid) {
+            document.querySelector('form').classList.add('success');
+            setTimeout(() => document.querySelector('form').classList.remove('success'), 1500);
         }
 
         return valid;
