@@ -1,70 +1,178 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Formulář</title>
+    <title>FormB</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        form {
+            max-width: 400px;
+            margin: auto;
+            background-color: #f4f4f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        fieldset {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+        fieldset legend {
+            font-weight: 400;
+            color: #333;
+        }
+        label, input, select, textarea {
+            display: block;
+            margin-bottom: 6px;
+            color: #333;
+        }
+        .inline-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .hobbies {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 15px;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        textarea {
+            width: 100%;
+            max-width: 100%;
+            height: 60px;
+            resize: none;
+            background-color: #f9f9fb;
+            border: 1px solid #ddd;
+            padding: 8px;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .error {
+            color: red;
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+        .form-buttons {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+        .form-buttons input[type="submit"], .form-buttons button {
+            padding: 10px 15px;
+            font-size: 14px;
+            line-height: 1.2;
+            height: 40px;
+            box-sizing: border-box;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .form-buttons input[type="submit"]:hover, .form-buttons button:hover {
+            background-color: #0056b3;
+        }
+        .success {
+            background-color: #e0f7e0 !important;
+        }
+    </style>
 </head>
 <body>
-    <form action="#" method="post">
+    <form action="#" method="post" onsubmit="return validateForm()">
         <fieldset>
-            <legend>Osobní informace</legend>
-            <label for="name">Jméno</label>
-            <br>
-            <input type="text" id="name" name="user_name" required maxlength="10">
-            <br>
-            <br>
-            <label>Pohlaví</label>
-            <br>
-            <label for="man">Muž</label>
-            <input type="radio" name="sex" id="man" value="Muž">
-            <label for="woman"><input type="radio" name="sex" id="woman" value="Žena">Žena</label>
-            <br>
-            <label for="birth_date">Datum narození</label>
-            <br>
-            <input type="datetime-local" id="birth_date" name="birth_date" required>
-            <br>
-            <label for="password">Heslo</label>
-            <br>
-            <input type="password" id="password" name="password" required minlength="8">
-            <br>
-            <label for="profile_image">Profilová fotka</label>
-            <input type="file" name="profile_image" id="profile_image" accept="image/jpg,image/png">
-            <label for="shoe_size">Velikost boty</label>
-            <input type="number" name="shoe_size" id="shoe_size" min="26" max="59" step="2">
+            <legend><b>Osobní informace</b></legend>
+            <label for="name">Jméno *</label>
+            <input type="text" id="name" name="user_name" required minlength="3" maxlength="10" placeholder="Vaše jméno" oninput="validateLive('name')">
+            <div class="error" id="nameError"></div>
+
+            <label for="birth_date">Datum narození *</label>
+            <input type="date" id="birth_date" name="birth_date" required>
+            <div class="error" id="dateError"></div>
+
+            <label for="password">Heslo *</label>
+            <input type="password" id="password" name="password" required minlength="8" placeholder="Zadejte heslo (min. 8 znaků)" oninput="validateLive('password')">
+            <div class="error" id="passwordError"></div>
         </fieldset>
+
         <fieldset>
-            <legend>Kontaktní informace</legend>
+            <legend><b>Kontaktní informace</b></legend>
             <label for="country">Stát</label>
             <select name="country" id="country">
-                <optgroup label="Evropa">
-                    <option value="cz">ČR</option>
-                    <option value="sk">SK</option>
-                    <option value="hu">HU</option>
-                </optgroup>
-                <optgroup label="Svět">
-                    <option value="ca">Kanada</option>
-                    <option value="br">Brazílie</option>
-                </optgroup>
+                <option value="cz">ČR</option>
+                <option value="sk">SK</option>
+                <option value="hu">HU</option>
+                <option value="ca">Kanada</option>
+                <option value="br">Brazílie</option>
             </select>
         </fieldset>
+
         <fieldset>
-            <legend>Záliby</legend>
-            <label><input type="checkbox" name="interest" value="fishing">Rybaření</label>
-            <label><input type="checkbox" name="interest" value="chess">Šachy</label>
-            <label><input type="checkbox" name="interest" value="cooking">Vaření</label>
-            <label><input type="checkbox" name="interest" value="kids">Děti</label>
-            <label><input type="checkbox" name="interest" value="lego">Lego</label>
+            <legend><b>Záliby</b></legend>
+            <div class="hobbies">
+                <label><input type="checkbox" name="interest" value="fishing">Rybaření</label>
+                <label><input type="checkbox" name="interest" value="chess">Šachy</label>
+                <label><input type="checkbox" name="interest" value="cooking">Vaření</label>
+                <label><input type="checkbox" name="interest" value="lego">Lego</label>
+            </div>
+
             <label for="bio">O mě:</label>
-            <textarea id="bio" name="bio" rows="3" cols="100"></textarea>
+            <textarea id="bio" name="bio" rows="3" cols="60" placeholder="Napište něco o sobě..."></textarea>
         </fieldset>
-        
-        <input type="hidden" value="validation_token" name="validation_token">
-        <input type="submit" value="Odeslat">
-        <button type="reset">Reset</button>
-        <button type="submit">Submit</button>
-        <button>Nic</button>
-    </form>
+
+        <div class="form-buttons">
+            <input type="submit" value="Odeslat">
+            <button type="reset">Reset</button>
+        </div>
+    <p><small>* Označuje povinná pole</small></p>
+</form>
+
+<script>
+    function validateLive(field) {
+        if (field === 'name') {
+            const name = document.getElementById('name');
+            const nameError = document.getElementById('nameError');
+            nameError.textContent = name.value.length >= 3 ? '' : 'Jméno musí mít alespoň 3 znaky.';
+        }
+
+        if (field === 'password') {
+            const password = document.getElementById('password');
+            const passwordError = document.getElementById('passwordError');
+            passwordError.textContent = password.value.length >= 8 ? '' : 'Heslo musí mít alespoň 8 znaků.';
+        }
+    }
+
+    function validateForm() {
+        const name = document.getElementById('name');
+        const password = document.getElementById('password');
+        const birthDate = document.getElementById('birth_date');
+
+        let valid = true;
+
+        if (name.value.length < 3) {
+            document.getElementById('nameError').textContent = 'Jméno musí mít alespoň 3 znaky.';
+            valid = false;
+        }
+
+        if (password.value.length < 8) {
+            document.getElementById('passwordError').textContent = 'Heslo musí mít alespoň 8 znaků.';
+            valid = false;
+        }
+
+        if (!birthDate.value) {
+            document.getElementById('dateError').textContent = 'Datum narození je povinné.';
+            valid = false;
+        }
+
+        return valid;
+    }
+</script>
+
 </body>
 </html>

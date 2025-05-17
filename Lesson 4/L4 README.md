@@ -60,3 +60,4 @@ lesson4/
 ## Acknowledgments
 
 Special thanks to [**Praha Coding School**](https://prahacoding.cz/) for their guidance and support.
+
