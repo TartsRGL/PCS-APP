@@ -2,7 +2,8 @@
 
 ## Overview
 
-This project is part of the **PCS-APP** course and demonstrates two versions of a user form with a focus on clean structure, accessibility, and progressive enhancements.
+This project is part of the **PCS-APP** course and demonstrates two versions of a user form with a focus
+on clean structure, accessibility, and progressive enhancements.
 
 ## Features
 
